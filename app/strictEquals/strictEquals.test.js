@@ -9,9 +9,20 @@ describe("Given a strictEquals function", () => {
       const valueB = 1;
       const result = true;
 
-      const hasEqualsValues = strictEquals(valueA, valueB);
+      const hasEqualValues = strictEquals(valueA, valueB);
 
-      expect(hasEqualsValues).toBe(result);
+      expect(hasEqualValues).toBe(result);
+    });
+  });
+  describe("When it recieves NaN and NaN", () => {
+    test("Then it should return false", () => {
+      const valueA = NaN;
+      const valueB = NaN;
+      const result = false;
+
+      const hasEqualValues = strictEquals(valueA === valueB);
+
+      expect(hasEqualValues).toBe(result);
     });
   });
 });
